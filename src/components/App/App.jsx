@@ -4,15 +4,16 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./App.css";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <div className="page">
       <Header />
-      <Main />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/saved-news" element={<p>Saved news</p>} />
+      </Routes>
       <Footer />
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
