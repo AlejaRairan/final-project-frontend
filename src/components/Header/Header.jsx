@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 
-function Header({ theme = "dark", ...navProps }) {
+function Header({ ...navProps }) {
   return (
-    <header className={`header header_theme_${theme}`}>
-      <Link className="header__logo" to="/">NewsExplorer</Link>
+    <header className="header">
+      <Link className="header__link" to="/">CountriesExplorer</Link>
       <Navigation {...navProps} />
     </header>
   );

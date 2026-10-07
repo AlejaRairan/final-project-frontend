@@ -1,0 +1,25 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 20px;
+  font-size: 25px;
+}
+.navigation__link {
+  color: #fff;
+  text-decoration: none;
+}
+.navigation__button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  padding: 8px 24px;
+  font: inherit;
+  transition: background 0.2s;
+}
+
+.navigation__button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

@@ -1,0 +1,36 @@
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../images/background.png") center / cover no-repeat;
+}
+
+.hero__content {
+  text-align: center;
+  padding: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px 120px;
+  background: none;
+}
+
+.hero__title {
+  color: #fff;
+  font-family: var(--font-title);
+  font-size: 48px;
+  margin: 0 0 16px;
+  padding: 20px;
+}
+.header_theme_light {
+  position: relative;
+  background: #fff;
+  color: #1a1b22;
+}
+
+.hero__subtitle {
+  color: #fff;
+  font-family: var(--font-title);
+  font-size: 24px;
+  margin: 0 0 16px;
+  padding: 20px;
+}

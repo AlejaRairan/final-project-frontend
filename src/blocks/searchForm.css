@@ -1,0 +1,28 @@
+.search__form {
+  display: flex;
+  max-width: 576px;
+  margin: 40px auto 0;
+  background: #fff;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.search__form-input {
+  flex: 1;
+  border: 0;
+  padding: 0 24px;
+  height: 64px;
+  font: inherit;
+  outline: none;
+}
+
+.search__form-button {
+  border: 0;
+  padding: 0 40px;
+  background: #2f71e5;              /* usa el azul de tu Figma */
+  color: #fff;
+  border-radius: 100px;
+  transition: background 0.2s;
+}
+
+.search__form-button:hover { background: #347eff; }

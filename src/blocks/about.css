@@ -1,0 +1,44 @@
+.about {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 80px 104px;
+  background: #fff;
+  color: #1a1b22;
+}
+.about__photo {
+  width: 500px;
+  height: 650px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+.about__title {
+  
+  font-size: 48px;
+  margin: 0 0 16px;
+}
+.about__text {
+  max-width: 750px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .about__photo {
+    width: 300px;
+    height: 350px;
+    
+  }
+  .about__title {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  .about__text {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+}

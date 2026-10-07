@@ -1,0 +1,35 @@
+.login__field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.login__input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+.login__button {
+  background-color: #1b1fec;
+  border: none;
+  width:100%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color:white;
+}
+
+
+.login__input:-webkit-autofill,
+.login__input:-webkit-autofill:hover,
+.login__input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px black inset;
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
