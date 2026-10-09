@@ -1,7 +1,8 @@
 .hero {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../images/background.png") center / cover no-repeat;
+ 
+  background: linear-gradient(180deg, rgba(31, 42, 68, 0.55) 0%, rgba(31, 42, 68, 0.15) 60%, rgba(31, 42, 68, 0.35) 100%),
+  url("../images/monteFuji.jpg") center / cover no-repeat;
+  padding-top: 80px;
 }
 
 .hero__content {
@@ -18,19 +19,15 @@
   color: #fff;
   font-family: var(--font-title);
   font-size: 48px;
-  margin: 0 0 16px;
+  margin:32px 0;
   padding: 20px;
 }
-.header_theme_light {
-  position: relative;
-  background: #fff;
-  color: #1a1b22;
-}
+
 
 .hero__subtitle {
   color: #fff;
   font-family: var(--font-title);
-  font-size: 24px;
+  font-size: 34px;
   margin: 0 0 16px;
   padding: 20px;
 }

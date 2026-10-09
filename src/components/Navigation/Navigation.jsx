@@ -1,17 +1,26 @@
 import { NavLink } from "react-router-dom";
 import logout from "../../images/logout.svg";
 
-function Navigation({ isLoggedIn, userName, onSignInClick, onLogout }) {
+function Navigation({ theme = "light", isLoggedIn, userName, onSignInClick, onLogout }) {
+  const linkClass = ({ isActive }) =>
+    `navigation__link navigation__link_theme_${theme} ${
+      isActive ? "navigation__link_active" : ""
+    }`;
+
   return (
     <nav className="navigation">
-      <NavLink className="navigation__link" to="/">Home</NavLink>
+      <NavLink className={linkClass} to="/" end>
+        Home
+      </NavLink>
 
       {isLoggedIn ? (
         <>
-          <NavLink className="navigation__link" to="/saved-news">Saved places</NavLink>
+          <NavLink className={linkClass} to="/saved-countries">
+            Saved Countries
+          </NavLink>
           <button className="navigation__button" type="button" onClick={onLogout}>
-            {userName}
-            <img src={logout} alt="Logout" />
+            
+            <img src={logout} alt="Logout" className="navigation__icon" />
           </button>
         </>
       ) : (

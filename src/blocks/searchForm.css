@@ -19,10 +19,12 @@
 .search__form-button {
   border: 0;
   padding: 0 40px;
-  background: #2f71e5;              /* usa el azul de tu Figma */
+  background: var(--color-primary);         
   color: #fff;
   border-radius: 100px;
   transition: background 0.2s;
 }
 
-.search__form-button:hover { background: #347eff; }
+.search__form-button:hover { 
+  background: var(--color-primary-hover);
+ }

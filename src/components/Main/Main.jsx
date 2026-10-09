@@ -1,13 +1,11 @@
-import Header from "../Header/Header";            {/* NUEVO */}
 import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
 import "../../blocks/main.css";
 
-function Main({ onSignInClick }) {               
+function Main() {
   return (
     <main className="main">
-      <div className="hero">                 
-        <Header theme="dark" onSignInClick={onSignInClick} />
+      <div className="hero">
         <section className="hero__content">
           <h1 className="hero__title">What's going on in the world?</h1>
           <p className="hero__subtitle">
@@ -15,7 +13,7 @@ function Main({ onSignInClick }) {
           </p>
           <SearchForm />
         </section>
-      </div>                                       
+      </div>
       <About />
     </main>
   );

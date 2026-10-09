@@ -1,0 +1,19 @@
+:root {
+  --color-primary: #b84470;
+  --color-primary-hover: #9f385f;
+  --color-accent: #f3b6c4;
+  --color-sky: #7fb3d5;
+  --color-ink: #1f2a44;
+  --color-surface: #fdf1f3;
+  --color-text: #232a40;
+  --color-text-muted: #5b6275;
+  --color-border: #f0d3da;                           
+                              
+}
+:focus-visible {                    
+  outline: 2px solid var(--color-sky);
+  outline-offset: 2px;
+}
+html {
+    color-scheme: light;  
+}

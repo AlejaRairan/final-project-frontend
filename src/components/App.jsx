@@ -1,27 +1,38 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
 import Footer from "./Footer/Footer.jsx";
 import Main from "./Main/Main.jsx";
-import { useState } from "react";
+import Header from "./Header/Header.jsx";
+import SavedCountries from "./SavedCountries/SavedCountries.jsx";
 import Login from "./Login/Login.jsx";
-import Register from "./Register/Register.jsx"; 
-
+import Register from "./Register/Register.jsx";
 
 function App() {
-  const [activeModal, setActiveModal] = useState(null);   // NUEVO: "signin" | "signup" | null
-  const closeModal = () => setActiveModal(null); 
+  const [activeModal, setActiveModal] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const closeModal = () => setActiveModal(null);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   return (
     <div className="page">
+       <Header
+      theme="light"
+      isLoggedIn={isLoggedIn}
+      userName="Aleja"
+      onSignInClick={() => setActiveModal("signin")}
+      onLogout={() => setIsLoggedIn(false)}
+    />
       <Routes>
-        <Route path="/" element={<Main onSignInClick={() => setActiveModal("signin")} />} />
-        <Route path="/saved-news" element={<p>Saved news</p>} />
+        <Route path="/" element={<Main />} />
+        <Route path="/saved-countries" element={<SavedCountries />} />
       </Routes>
       <Footer />
-       <Login                                                  
+      <Login
         isOpen={activeModal === "signin"}
         onClose={closeModal}
         onSwitch={() => setActiveModal("signup")}
       />
-      <Register                                               
+      <Register
         isOpen={activeModal === "signup"}
         onClose={closeModal}
         onSwitch={() => setActiveModal("signin")}
@@ -30,4 +41,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

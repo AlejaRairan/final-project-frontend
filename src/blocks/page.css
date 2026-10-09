@@ -1,8 +1,13 @@
 .page {
-    position: relative;
-
+  position: relative;
 }
 
 .page__content {
   flex: 1;
+}
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }

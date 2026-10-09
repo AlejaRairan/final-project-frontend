@@ -6,30 +6,30 @@
 }
 .register__input {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 1rem;
   border-top: none;
   border-right: none;
   border-left: none;
+  background-color: #fff;
+  color: var(--color-ink);
+  caret-color: var(--color-ink);
 }
 .register__button {
-  background-color: #1b1fec;
-  border: none;
+  
   width:100%;
   padding: 10px;
   cursor: pointer;
   font-size: 20px;
   color:white;
+  border-radius: 20px;
 }
-
 
 .register__input:-webkit-autofill,
 .register__input:-webkit-autofill:hover,
 .register__input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px black inset;
-  -webkit-text-fill-color: white;
-  transition: background-color 5000s ease-in-out 0s;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  -webkit-text-fill-color: var(--color-ink);
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  box-shadow: 0 0 0 1000px #fff inset;
+  transition: background-color 9999s ease-in-out 0s;
 }
