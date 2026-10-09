@@ -1,6 +1,6 @@
 import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
-import "../../blocks/main.css";
+
 
 function Main() {
   return (
