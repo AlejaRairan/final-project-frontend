@@ -1,17 +1,33 @@
-@import url("./blocks/about.css");
-@import url("./blocks/app.css");
-@import url("./blocks/body.css");
-@import url("./blocks/countryCard.css");
-@import url("./blocks/footer.css");
-@import url("./blocks/header.css");
-@import url("./blocks/login.css");
-@import url("./blocks/main.css");
-@import url("./blocks/navigation.css");
-@import url("./blocks/page.css");
-@import url("./blocks/popup.css");
-@import url("./blocks/register.css");
-@import url("./blocks/savedCountries.css");
-@import url("./blocks/searchForm.css");
-@import url("./blocks/variables.css");
+:root {
+  --color-primary: #b84470;
+  --color-primary-hover: #9f385f;
+  --color-accent: #f3b6c4;
+  --color-sky: #7fb3d5;
+  --color-ink: #1f2a44;
+  --color-surface: #fdf1f3;
+  --color-text: #232a40;
+  --color-text-muted: #5b6275;
+  --color-border: #f0d3da;                           
+                              
+}
+:focus-visible {                    
+  outline: 2px solid var(--color-sky);
+  outline-offset: 2px;
+}
+html {
+    color-scheme: light;  
+}
+body {
+  margin: 0;
+  color: var(--color-text);                           /* era color: var(--text) */
+  background: #fff;                                   /* era background: var(--bg) */
+}
 
+h1,
+h2 {
+  color: var(--color-ink);                            /* era color: var(--text-h) */
+}
 
+p {
+  margin: 0;                                          /* viene de tu index.css */
+}

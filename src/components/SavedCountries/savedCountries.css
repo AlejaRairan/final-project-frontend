@@ -33,3 +33,9 @@
   color: #1a1b22;
   opacity: 0.7;
 }
+
+@media screen and (max-width: 1024px) {
+  .countries {
+    padding: 56px 40px 80px;
+  }
+}

@@ -49,3 +49,13 @@
   border-right: none;
   border-left: none;
 }
+.login__input,
+.register__input,
+.search-form__input {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login__input:focus,
+.register__input:focus {
+  border-color: var(--color-primary);
+}

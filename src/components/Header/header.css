@@ -43,3 +43,19 @@
 .header_theme_light .navigation__button:hover {
   background: rgba(31, 42, 68, 0.08);
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    height: auto;
+    min-height: 64px;
+    padding: 12px 20px;
+  }
+
+  .header__logo {
+    font-size: 18px;
+  }
+
+  .navigation__link {
+    white-space: nowrap;
+  }
+}

@@ -1,11 +1,12 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
-import Footer from "./Footer/Footer.jsx";
-import Main from "./Main/Main.jsx";
-import Header from "./Header/Header.jsx";
-import SavedCountries from "./SavedCountries/SavedCountries.jsx";
-import Login from "./Login/Login.jsx";
-import Register from "./Register/Register.jsx";
+import Footer from "../Footer/Footer.jsx";
+import Main from "../Main/Main.jsx";
+import Header from "../Header/Header.jsx";
+import SavedCountries from "../SavedCountries/SavedCountries.jsx";
+import Login from "../Login/Login.jsx";
+import Register from "../Register/Register.jsx";
+import "./App.css";
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);

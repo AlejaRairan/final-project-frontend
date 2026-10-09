@@ -23,7 +23,7 @@
   background: #fff;
   border-radius: 16px;
   padding: 54px 56px;
-  width: 530px;
+  width: 430px;
   max-width: calc(100% - 32px);
 }
 .popup__title {
@@ -72,4 +72,5 @@
     top: -36px;
     right: 0;
   }
+  
 }
