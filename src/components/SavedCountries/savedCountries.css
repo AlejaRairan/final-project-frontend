@@ -4,7 +4,7 @@
   text-align: left;
   background-image:
     linear-gradient(rgba(253, 241, 243, 0.55), rgba(253, 241, 243, 0.55)),
-    url("../images/monteFuji.jpg");                                   
+    url("../../images/monteFuji.jpg");                                   
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,7 +25,7 @@
 
 .countries__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 

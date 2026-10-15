@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import "./register.css";
 
 function Register({ onRegister, isOpen, onClose, onSwitch }) {
   const [email, setEmail] = useState("");

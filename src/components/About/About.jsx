@@ -1,5 +1,5 @@
 import author from "../../images/author.png"
-
+import "./about.css";
 function About() {
   return (
     <section className="about">

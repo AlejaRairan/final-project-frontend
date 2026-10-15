@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
-
+import "./header.css";
 function Header({ isLoggedIn, userName, onSignInClick, onLogout, theme = "light", ...navProps }) {
   return (
     <header className={`header header_theme_${theme}`}>

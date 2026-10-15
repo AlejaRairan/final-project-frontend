@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";   // NUEVO: faltaba el import
-
+import "./login.css";  
 function Login({ isOpen, onClose, onSwitch }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

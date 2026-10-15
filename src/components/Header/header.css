@@ -49,6 +49,8 @@
     height: auto;
     min-height: 64px;
     padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   .header__logo {

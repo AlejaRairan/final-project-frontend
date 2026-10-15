@@ -8,11 +8,10 @@
   gap: 48px;
 }
 .about__photo {
-  width: 500px;
-  height: 650px;
+  width: 400px;
+  height: 550px;
   margin-bottom: 20px;
   border-radius: 50%;
-  
 }
 .about__title {
   margin: 0 0 16px;
@@ -20,17 +19,16 @@
 }
 .about__text {
   max-width: 750px;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
   .about {
     display: flex;
     flex-direction: column;
     padding: 56px 40px;
     gap: 32px;
-    
   }
   .about__photo {
     width: 320px;
@@ -44,10 +42,9 @@
 @media screen and (max-width: 800px) {
   .about {
     display: flex;
-    flex-direction: column;      
+    flex-direction: column;
     padding: 40px 20px;
     gap: 24px;
-  
   }
   .about__photo {
     width: 300px;
@@ -55,9 +52,14 @@
   }
   .about__title {
     margin: 0 0 8px;
+    
   }
   .about__text {
     font-size: 20px;
     line-height: 1.4;
   }
-}
+  .about__info {
+    text-align: center;
+
+  }
+} 

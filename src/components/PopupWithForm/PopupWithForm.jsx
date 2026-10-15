@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import CloseIcon from "../../images/close.svg";
+import "./popup.css";
 
 function PopupWithForm({
   isOpen,
@@ -34,8 +35,10 @@ function PopupWithForm({
           className="popup__close-button"
           type="button"
           onClick={onClose}
+          aria-modal="true"
+          role="dialog"
         >
-          <img src={CloseIcon} alt="" className="popup__close-icon" />{" "}
+          <img src={CloseIcon} alt="" className="popup__close-icon" />
           
         </button>
 

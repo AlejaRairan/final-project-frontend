@@ -1,7 +1,7 @@
 .hero {
  
   background: linear-gradient(180deg, rgba(31, 42, 68, 0.55) 0%, rgba(31, 42, 68, 0.15) 60%, rgba(31, 42, 68, 0.35) 100%),
-  url("../images/monteFuji.jpg") center / cover no-repeat;
+  url("../../images/monteFuji.jpg") center / cover no-repeat;
   padding-top: 80px;
 }
 

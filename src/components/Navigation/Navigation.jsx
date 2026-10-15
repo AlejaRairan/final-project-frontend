@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import logout from "../../images/logout.svg";
+import "./navigation.css";
 
 function Navigation({ theme = "light", isLoggedIn, userName, onSignInClick, onLogout }) {
   const linkClass = ({ isActive }) =>
@@ -19,7 +20,7 @@ function Navigation({ theme = "light", isLoggedIn, userName, onSignInClick, onLo
             Saved Countries
           </NavLink>
           <button className="navigation__button" type="button" onClick={onLogout}>
-            
+            {userName}
             <img src={logout} alt="Logout" className="navigation__icon" />
           </button>
         </>

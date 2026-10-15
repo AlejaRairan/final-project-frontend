@@ -1,20 +1,7 @@
-import { useState } from "react";
 import CountryCard from "../CountryCard/CountryCard.jsx";
+import "./savedCountries.css";
 
-
-const mockSaved = [
-  { name: "Japan", capital: "Tokyo", region: "Asia", flag: "https://flagcdn.com/w320/jp.png", landscape: "https://images.pexels.com/photos/31369843/pexels-photo-31369843.jpeg" },
-  { name: "Bhutan", capital: "Thimphu", region: "Asia", flag: "https://flagcdn.com/w320/bt.png", landscape: "https://images.pexels.com/photos/37747857/pexels-photo-37747857.jpeg" },
-  { name: "Iceland", capital: "Reykjavik", region: "Europe", flag: "https://flagcdn.com/w320/is.png", landscape: "https://images.pexels.com/photos/27182326/pexels-photo-27182326.jpeg" },
-];
-
-function SavedCountries() {
-  const [savedCountries, setSavedCountries] = useState(mockSaved);
-
-  const handleRemoveCountry = (countryName) => {
-    setSavedCountries(savedCountries.filter((country) => country.name !== countryName));
-  };
-
+function SavedCountries({ savedCountries, onRemove }) {
   return (
     <section className="countries">
       <section className="countries__intro">
@@ -31,7 +18,7 @@ function SavedCountries() {
             <CountryCard
               key={country.name}
               country={country}
-              onRemove={handleRemoveCountry}
+              onRemove={onRemove}
             />
           ))}
         </section>
