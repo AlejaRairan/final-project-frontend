@@ -65,7 +65,6 @@ export async function searchCountries(query) {
   if (res.status === 404) return [];
  if (!res.ok) {                                                     
   const body = await res.json().catch(() => null);
-  console.error("API error", res.status, body?.errors?.[0]?.message);
   throw new Error(`Error: ${res.status}`);
 }
   const json = await res.json();

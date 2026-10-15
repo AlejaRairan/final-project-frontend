@@ -1,7 +1,7 @@
 .header {
   box-sizing: border-box;
   width: 100%;
-  height: 80px;
+   min-height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,6 +42,11 @@
 
 .header_theme_light .navigation__button:hover {
   background: rgba(31, 42, 68, 0.08);
+}
+@media screen and (max-width: 1024px) {             
+  .header {
+    padding: 12px 32px;
+  }
 }
 
 @media screen and (max-width: 767px) {

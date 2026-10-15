@@ -15,8 +15,8 @@ function App() {
   const [activeModal, setActiveModal] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const closeModal = () => setActiveModal(null);
-  const { pathname } = useLocation();
-  const isHome = pathname === "/";
+ 
+  
   const [savedCountries, setSavedCountries] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("savedCountries")) ?? [];

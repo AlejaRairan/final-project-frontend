@@ -1,4 +1,4 @@
-import author from "../../images/author.png"
+import author from "../../images/author.webp";
 import "./about.css";
 function About() {
   return (

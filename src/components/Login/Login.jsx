@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";   // NUEVO: faltaba el import
+import PopupWithForm from "../PopupWithForm/PopupWithForm";   
 import "./login.css";  
 function Login({ isOpen, onClose, onSwitch }) {
   const [email, setEmail] = useState("");
@@ -7,7 +7,7 @@ function Login({ isOpen, onClose, onSwitch }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // la llamada a la API irá aquí en la siguiente etapa
+    
   }
 
   return (
@@ -26,6 +26,7 @@ function Login({ isOpen, onClose, onSwitch }) {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
       </div>
       <div className="login__field">
@@ -35,6 +36,7 @@ function Login({ isOpen, onClose, onSwitch }) {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
       </div>
       <button type="submit" className="login__button">
