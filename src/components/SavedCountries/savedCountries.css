@@ -1,0 +1,41 @@
+.countries {
+  padding: 56px 104px 80px;
+  min-height: 100vh;
+  text-align: left;
+  background-image:
+    linear-gradient(rgba(253, 241, 243, 0.55), rgba(253, 241, 243, 0.55)),
+    url("../../images/monteFuji.jpg");                                   
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.countries__label {
+  margin: 0 0 12px;
+  font-size: 24px;
+  color: #1a1b22;
+  opacity: 0.6;
+}
+
+.countries__title {
+  margin: 0 0 48px;
+  font-size: 50px;
+  color: #1a1b22;
+}
+
+.countries__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.countries__empty {
+  color: #1a1b22;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1024px) {
+  .countries {
+    padding: 56px 40px 80px;
+  }
+}
