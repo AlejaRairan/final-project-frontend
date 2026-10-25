@@ -71,7 +71,7 @@ function App() {
       <Header
         theme="light"
         isLoggedIn={isLoggedIn}
-        userName="Aleja"
+        userName=""
         onSignInClick={() => setActiveModal("signin")}
         onLogout={() => setIsLoggedIn(false)}
       />

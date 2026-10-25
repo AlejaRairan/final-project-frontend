@@ -3,7 +3,7 @@ import "./about.css";
 function About() {
   return (
     <section className="about">
-      <img className="about__photo" src={author} alt="Foto del autor" />
+      <img className="about__photo" src={author} alt="Author photo" />
       <div className="about__info">
         <h2 className="about__title">About the author</h2>
         <p className="about__text">

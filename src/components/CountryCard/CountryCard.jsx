@@ -36,11 +36,14 @@ function CountryCard({
           </h3>
           <p className="country__card-text">{country.capital}</p>
         </div>
-        <img
-          className="country__card-flag"
-          src={country.flag}
-          alt={`Flag of ${country.name}`}
-        />
+
+        {country.flag && ( 
+          <img
+            className="country__card-flag"
+            src={country.flag}
+            alt={`Flag of ${country.name}`}
+          />
+        )}
       </div>
 
       <span className="country__card-tag">{country.region}</span>

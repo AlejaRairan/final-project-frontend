@@ -13,18 +13,17 @@ function SavedCountries({ savedCountries, onRemove }) {
       </section>
 
       {savedCountries.length > 0 ? (
-        <section className="countries__grid">
+        <ul className="countries__grid">
           {savedCountries.map((country) => (
-            <CountryCard
-              key={country.name}
-              country={country}
-              onRemove={onRemove}
-            />
+            <li key={country.name} className="countries__item">
+              <CountryCard country={country} onRemove={onRemove} />
+            </li>
           ))}
-        </section>
+        </ul>
       ) : (
         <p className="countries__empty">
-          Nothing here yet. Search for a country and save the ones you want to visit.
+          Nothing here yet. Search for a country and save the ones you want to
+          visit.
         </p>
       )}
     </section>

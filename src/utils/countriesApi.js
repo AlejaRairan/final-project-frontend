@@ -1,22 +1,27 @@
-const BASE_URL = "https://api.restcountries.com/countries/v5";
-const API_KEY = import.meta.env.VITE_COUNTRIES_API_KEY;
-const FIELDS = "names.common,capitals,region,flag.url_png,codes.alpha_2";
-const COMMONS_URL = "https://commons.wikimedia.org/w/api.php";
+import {
+  COUNTRIES_API_URL,
+  COUNTRIES_API_KEY,
+  COUNTRY_FIELDS,
+  FLAG_CDN_URL,
+  COMMONS_API_URL,
+  WIKIPEDIA_SUMMARY_URL,
+  WIKIVOYAGE_API_URL,
+  SEARCH_LIMIT,
+  CARD_PHOTO_WIDTH,
+} from "./constants";
 
 const mapCountry = (c) => ({
   name: c.names.common,
   capital: c.capitals?.[0]?.name ?? "N/A",
   region: c.region,
-  flag:
-    c.flag?.url_png ??
-    `https://flags.restcountries.com/v5/w320/${c.codes.alpha_2.toLowerCase()}.png`,
+  flag: c.flag?.url_png || `${FLAG_CDN_URL}/${c.codes.alpha_2.toLowerCase()}.png`,
   landscape: null,
 });
 
 async function getDescription(name) {
   try {
     const res = await fetch(
-      `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`
+      `${WIKIPEDIA_SUMMARY_URL}/${encodeURIComponent(name)}`,
     );
     if (!res.ok) return "";
     const data = await res.json();
@@ -26,7 +31,7 @@ async function getDescription(name) {
   }
 }
 
-export async function getLandscape(name, width = 600) {
+export async function getLandscape(name, width = CARD_PHOTO_WIDTH) {
   try {
     const params = new URLSearchParams({
       action: "query",
@@ -40,16 +45,16 @@ export async function getLandscape(name, width = 600) {
       format: "json",
       origin: "*",
     });
-    const res = await fetch(`${COMMONS_URL}?${params}`);
+    const res = await fetch(`${COMMONS_API_URL}?${params}`);
     if (!res.ok) return null;
     const data = await res.json();
     const pages = Object.values(data.query?.pages ?? {}).sort(
-      (a, b) => a.index - b.index
+      (a, b) => a.index - b.index,
     );
     const photo = pages.find(
       (p) =>
         p.imageinfo?.[0]?.mime === "image/jpeg" &&
-        !/flag|map|coat|logo|stamp|seal/i.test(p.title)
+        !/flag|map|coat|logo|stamp|seal/i.test(p.title),
     );
     return photo?.imageinfo[0].thumburl ?? null;
   } catch {
@@ -59,13 +64,13 @@ export async function getLandscape(name, width = 600) {
 
 export async function searchCountries(query) {
   const res = await fetch(
-    `${BASE_URL}/name?q=${encodeURIComponent(query)}&limit=12&response_fields=${FIELDS}`,
-    { headers: { Authorization: `Bearer ${API_KEY}` } }
+    `${COUNTRIES_API_URL}/name?q=${encodeURIComponent(query)}&limit=${SEARCH_LIMIT}&response_fields=${COUNTRY_FIELDS}`,
+    { headers: { Authorization: `Bearer ${COUNTRIES_API_KEY}` } },
   );
   if (res.status === 404) return [];
- if (!res.ok) {                                                     
-  throw new Error(`Error: ${res.status}`);
-}
+  if (!res.ok) {
+    throw new Error(`Error: ${res.status}`);
+  }
   const json = await res.json();
   const countries = (json.data?.objects ?? []).map(mapCountry);
   return Promise.all(
@@ -75,7 +80,7 @@ export async function searchCountries(query) {
         getLandscape(c.name),
       ]);
       return { ...c, description, landscape };
-    })
+    }),
   );
 }
 
@@ -90,7 +95,7 @@ export async function getTravelGuide(name) {
     format: "json",
     origin: "*",
   });
-  const res = await fetch(`https://en.wikivoyage.org/w/api.php?${params}`);
+  const res = await fetch(`${WIKIVOYAGE_API_URL}?${params}`);
   if (!res.ok) throw new Error(`Error: ${res.status}`);
   const data = await res.json();
   const page = Object.values(data.query?.pages ?? {})[0];

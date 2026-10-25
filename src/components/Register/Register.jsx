@@ -23,19 +23,27 @@ return (
       <div className="register__field">
         <input
           type="email"
+          name="email"
+          autoComplete="email"
+          aria-label="Email"
           className="register__input"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
       </div>
       <div className="register__field">
         <input
           type="password"
+          name="password"
+          autoComplete="new-password"
+          aria-label="Create password"
           className="register__input"
           placeholder="Create Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
       </div>
       <button type="submit" className="register__button">

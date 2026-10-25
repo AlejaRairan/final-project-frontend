@@ -25,8 +25,21 @@
 
 .countries__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));      
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+  margin: 0;                         
+  padding: 0;                        
+  list-style: none;                  
+}
+
+.countries__item {                   
+  display: flex;
+  min-width: 0;
+}
+
+.countries__item > .country__card {  
+  flex: 1;
+  min-width: 0;
 }
 
 .countries__empty {
