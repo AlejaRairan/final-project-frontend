@@ -1,49 +1,35 @@
 import { useEffect, useState } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import Preloader from "../Preloader/Preloader.jsx";
 import NothingFound from "../NothingFound/NothingFound.jsx";
 import CountryCard from "../CountryCard/CountryCard.jsx";
 import "../SavedCountries/savedCountries.css";
-import { searchCountries } from "../../utils/countriesApi";
-import { CARDS_PER_PAGE, ERROR_MESSAGE } from "../../utils/constants";
+import { CARDS_PER_PAGE } from "../../utils/constants";
 
 function SearchResults({
   savedCountries,
   onToggleSave,
-  searchData,
-  onSearchData,
   isLoggedIn,
+  searchData,
+  isLoading,
+  error,
+  onSearch,
 }) {
   const [params] = useSearchParams();
-  const { key } = useLocation();
   const query = params.get("q") || "";
-  const [failedKey, setFailedKey] = useState(null);
   const [visible, setVisible] = useState({ query, count: CARDS_PER_PAGE });
 
   const hasData = searchData.query === query;
   const results = hasData ? searchData.results : [];
-  const hasFailed = failedKey === key;
-  const isLoading = Boolean(query) && !hasData && !hasFailed;
-  const error = hasFailed ? ERROR_MESSAGE : null;
+  const isWaiting = Boolean(query) && !hasData && !error;
   const visibleCount = visible.query === query ? visible.count : CARDS_PER_PAGE;
 
   useEffect(() => {
-    if (!query || searchData.query === query) return;
-    let cancelled = false;
-    searchCountries(query)
-      .then((data) => {
-        if (!cancelled) onSearchData({ query, results: data });
-      })
-      .catch(() => {
-        if (!cancelled) setFailedKey(key);
-      });
-    return () => {
-      cancelled = true;
-    };
+    if (query) onSearch(query);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, key]);
+  }, [query]);
 
-  if (isLoading)
+  if (isLoading || isWaiting)
     return (
       <main className="search__results">
         <Preloader />
@@ -65,7 +51,7 @@ function SearchResults({
       </main>
     );
 
-    return (
+  return (
     <main className="search__results">
       <section className="countries">
         <h1 className="countries__title">Results for "{query}"</h1>
