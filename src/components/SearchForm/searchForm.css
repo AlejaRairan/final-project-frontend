@@ -39,6 +39,13 @@
  .search__form-button:focus-visible {               
   outline-offset: -4px;
 }
+.search__form-error {
+  color: var(--color-accent);
+  font-size: 16px;
+  margin-top: 12px;
+  text-align: center;
+}
+
 
 @media (max-width: 480px) {                       
   .search__form-button {

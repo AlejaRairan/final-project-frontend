@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
-import CloseIcon from "../../images/close.svg";
+import deleteIcon from "../../images/deleteIcon.svg";
 import "./countryCard.css";
 
-function CountryCard({ country, onRemove, onSave, isSaved = false }) {
+function CountryCard({
+  country,
+  onRemove,
+  onSave,
+  isSaved = false,
+  isLoggedIn = true,
+}) {
+  const saveLabel = !isLoggedIn
+    ? "Sign in to save countries"
+    : isSaved
+      ? "Remove from saved"
+      : "Save country";
+
   return (
     <article className="country__card">
       {country.landscape ? (
@@ -22,9 +34,7 @@ function CountryCard({ country, onRemove, onSave, isSaved = false }) {
               {country.name}
             </Link>
           </h3>
-          <p className="country__card-text">
-            {country.capital} · {country.region}
-          </p>
+          <p className="country__card-text">{country.capital}</p>
         </div>
         <img
           className="country__card-flag"
@@ -33,11 +43,13 @@ function CountryCard({ country, onRemove, onSave, isSaved = false }) {
         />
       </div>
 
+      <span className="country__card-tag">{country.region}</span>
+
       {onSave && (
         <button
-          className={`country__card-save ${isSaved ? "country__card-save_active" : ""}`}
+          className={`country__card-save ${isSaved ? "country__card-save_active" : ""} ${!isLoggedIn ? "country__card-save_inactive" : ""}`}
           type="button"
-          aria-label={isSaved ? `Remove ${country.name} from saved` : `Save ${country.name}`}
+          aria-label={saveLabel}
           aria-pressed={isSaved}
           onClick={() => onSave(country)}
         >
@@ -50,6 +62,9 @@ function CountryCard({ country, onRemove, onSave, isSaved = false }) {
               strokeLinejoin="round"
             />
           </svg>
+          <span className="country__card-tooltip" aria-hidden="true">
+            {saveLabel}
+          </span>
         </button>
       )}
 
@@ -60,7 +75,10 @@ function CountryCard({ country, onRemove, onSave, isSaved = false }) {
           aria-label={`Remove ${country.name} from saved`}
           onClick={() => onRemove(country.name)}
         >
-          <img src={CloseIcon} alt="" className="country__card-remove-icon" />
+          <img src={deleteIcon} alt="" className="country__card-remove-icon" />
+          <span className="country__card-tooltip" aria-hidden="true">
+            Remove from saved
+          </span>
         </button>
       )}
     </article>

@@ -2,15 +2,13 @@ import { useEffect, useState } from "react";
 import "./scrollToTop.css";
 
 function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => window.scrollY > 300);
 
   useEffect(() => {
     const onScroll = () => setIsVisible(window.scrollY > 300);
-    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
   const handleClick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (

@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Footer from "../Footer/Footer.jsx";
 import Main from "../Main/Main.jsx";
@@ -13,10 +13,28 @@ import "./App.css";
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const closeModal = () => setActiveModal(null);
- 
-  
+
+  const [searchData, setSearchData] = useState(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem("searchData"));
+      return saved && Array.isArray(saved.results)
+        ? saved
+        : { query: "", results: [] };
+    } catch {
+      return { query: "", results: [] };
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("searchData", JSON.stringify(searchData));
+    } catch {
+      // sin almacenamiento disponible: se ignora 
+    }
+  }, [searchData]);
+
   const [savedCountries, setSavedCountries] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("savedCountries")) ?? [];
@@ -29,7 +47,7 @@ function App() {
     try {
       localStorage.setItem("savedCountries", JSON.stringify(savedCountries));
     } catch {
-      
+    // sin almacenamiento disponible: se ignora 
     }
   }, [savedCountries]);
 
@@ -65,6 +83,9 @@ function App() {
             <SearchResults
               savedCountries={savedCountries}
               onToggleSave={handleToggleSave}
+              searchData={searchData}
+              onSearchData={setSearchData}
+              isLoggedIn={isLoggedIn}
             />
           }
         />

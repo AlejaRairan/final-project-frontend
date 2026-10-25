@@ -59,12 +59,11 @@ export async function getLandscape(name, width = 600) {
 
 export async function searchCountries(query) {
   const res = await fetch(
-    `${BASE_URL}/name?q=${encodeURIComponent(query)}&limit=6&response_fields=${FIELDS}`,
+    `${BASE_URL}/name?q=${encodeURIComponent(query)}&limit=12&response_fields=${FIELDS}`,
     { headers: { Authorization: `Bearer ${API_KEY}` } }
   );
   if (res.status === 404) return [];
  if (!res.ok) {                                                     
-  const body = await res.json().catch(() => null);
   throw new Error(`Error: ${res.status}`);
 }
   const json = await res.json();
