@@ -1,0 +1,71 @@
+.countries {
+  padding: 56px 104px 80px;
+  min-height: 100vh;
+  text-align: left;
+  background-image:
+    linear-gradient(rgba(253, 241, 243, 0.55), rgba(253, 241, 243, 0.55)),
+    url("../../images/monteFuji.webp");                                   
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.countries__label {
+  margin: 0 0 12px;
+  font-size: 24px;
+  color: #1a1b22;
+  opacity: 0.6;
+}
+
+.countries__title {
+  margin: 0 0 48px;
+  font-size: 40px;
+  color: #1a1b22;
+}
+
+.countries__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;                         
+  padding: 0;                        
+  list-style: none;                  
+}
+
+.countries__item {                   
+  display: flex;
+  min-width: 0;
+}
+
+.countries__item > .country__card {  
+  flex: 1;
+  min-width: 0;
+}
+
+.countries__empty {
+  color: #1a1b22;
+  opacity: 0.7;
+}
+@media screen and (max-width: 1279px) {                          
+  .countries__grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));   
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .countries {
+    padding: 56px 40px 80px;
+  }
+  
+}
+@media screen and (max-width: 480px) {                          
+   .countries {
+  padding: 40px 16px 64px;
+  }
+
+  .countries__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+}

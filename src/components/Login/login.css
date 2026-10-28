@@ -1,0 +1,62 @@
+.login__field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.login__input {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 1rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: #fff;
+  color: var(--color-ink);
+  caret-color: var(--color-ink);
+}
+.login__button,
+.register__button {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 0;
+  border-radius: 100px;
+  transition: background 0.2s;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+.login__button:hover,
+.register__button:hover {
+  background: var(--color-primary-hover);   
+}
+
+.login__button:disabled,
+.register__button:disabled {
+  background: #e6d6db;                      
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+.login__input:-webkit-autofill,
+.login__input:-webkit-autofill:hover,
+.login__input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: var(--color-ink);
+  transition: background-color 9999s ease-in-out 0s;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+.login__input,
+.register__input,
+.search-form__input {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login__input:focus,
+.register__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-accent);
+}
