@@ -15,3 +15,6 @@ export const CARD_PHOTO_WIDTH = 600;
 
 export const ERROR_MESSAGE =
   "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.";
+
+export const MAIN_API_URL =
+  import.meta.env.VITE_MAIN_API_URL || "http://localhost:3000";
