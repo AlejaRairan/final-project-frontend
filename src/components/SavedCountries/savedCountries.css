@@ -46,6 +46,21 @@
   color: #1a1b22;
   opacity: 0.7;
 }
+
+.countries__title_type_saved {
+  margin-bottom: 16px;
+}
+
+.countries__regions {
+  margin: 0 0 48px;
+  font-size: 20px;
+  color: #1a1b22;
+}
+
+.countries__regions-list {
+  font-weight: 700;
+}
+
 @media screen and (max-width: 1279px) {                          
   .countries__grid {
     grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));   
@@ -66,6 +81,14 @@
 
   .countries__title {
     font-size: 32px;
+    margin-bottom: 32px;
+  }
+    .countries__title_type_saved {
+    margin-bottom: 12px;
+  }
+
+  .countries__regions {
+    font-size: 16px;
     margin-bottom: 32px;
   }
 }

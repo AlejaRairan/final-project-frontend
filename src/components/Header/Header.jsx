@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import "./header.css";
-function Header({ isLoggedIn, userName, onSignInClick, onLogout, theme = "light", ...navProps }) {
+function Header({ isLoggedIn, onSignInClick, onLogout, theme = "light", ...navProps }) {
   return (
     <header className={`header header_theme_${theme}`}>
       <Link className="header__logo" to="/">
@@ -10,7 +10,6 @@ function Header({ isLoggedIn, userName, onSignInClick, onLogout, theme = "light"
       <Navigation
         theme={theme}
         isLoggedIn={isLoggedIn}
-        userName={userName}
         onSignInClick={onSignInClick}
         onLogout={onLogout}
         {...navProps}

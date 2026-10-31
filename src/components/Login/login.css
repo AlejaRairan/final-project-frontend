@@ -32,6 +32,11 @@
 .register__button:hover {
   background: var(--color-primary-hover);   
 }
+.login__error {
+  color: #e6404d;
+  font-size: 12px;
+}
+
 
 .login__button:disabled,
 .register__button:disabled {

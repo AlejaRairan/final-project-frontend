@@ -14,7 +14,8 @@ const mapCountry = (c) => ({
   name: c.names.common,
   capital: c.capitals?.[0]?.name ?? "N/A",
   region: c.region,
-  flag: c.flag?.url_png || `${FLAG_CDN_URL}/${c.codes.alpha_2.toLowerCase()}.png`,
+  flag:
+    c.flag?.url_png || `${FLAG_CDN_URL}/${c.codes.alpha_2.toLowerCase()}.png`,
   landscape: null,
 });
 
@@ -62,6 +63,12 @@ export async function getLandscape(name, width = CARD_PHOTO_WIDTH) {
   }
 }
 
+const normalizeText = (text) =>
+  text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
 export async function searchCountries(query) {
   const res = await fetch(
     `${COUNTRIES_API_URL}/name?q=${encodeURIComponent(query)}&limit=${SEARCH_LIMIT}&response_fields=${COUNTRY_FIELDS}`,
@@ -73,8 +80,13 @@ export async function searchCountries(query) {
   }
   const json = await res.json();
   const countries = (json.data?.objects ?? []).map(mapCountry);
+
+  const q = normalizeText(query.trim());
+  const matches = countries.filter((c) => normalizeText(c.name).includes(q));
+  const filtered = matches.length > 0 ? matches : countries;
+
   return Promise.all(
-    countries.map(async (c) => {
+    filtered.map(async (c) => {
       const [description, landscape] = await Promise.all([
         getDescription(c.name),
         getLandscape(c.name),

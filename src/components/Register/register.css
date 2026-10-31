@@ -25,6 +25,16 @@
   border-radius: 20px;
 }
 
+.register__error {
+  color: #e6404d;
+  font-size: 12px;
+}
+
+.register__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .register__input:-webkit-autofill,
 .register__input:-webkit-autofill:hover,
 .register__input:-webkit-autofill:focus {
