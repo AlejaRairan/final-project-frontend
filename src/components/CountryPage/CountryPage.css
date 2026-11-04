@@ -1,0 +1,125 @@
+.country__page-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 360px;
+  padding: 48px 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.country__page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(31, 42, 68, 0.85), rgba(31, 42, 68, 0.15));
+}
+
+.country__page-hero_no-photo {
+  min-height: 200px;
+  background: var(--color-ink);
+}
+
+.country__page-hero_no-photo::before {
+  display: none;
+}
+
+.country__page-title {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.country__page-body {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.country__page-index {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+}
+
+.country__page-index-title {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.country__page-index-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.country__page-index-link {
+  font-size: 16px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.country__page-index-link:hover {
+  color: var(--color-primary);
+}
+
+.country__page-section {
+  scroll-margin-top: 24px;
+}
+
+.country__page-section-title {
+  margin: 40px 0 12px;
+}
+
+.country__page-subtitle {
+  margin: 24px 0 8px;
+  font-family: var(--font-title);
+  color: var(--color-ink);
+}
+
+.country__page-text {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.country__page-credit {
+  margin-top: 48px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 1024px) {
+  .country__page-hero {
+    min-height: 240px;
+    padding: 32px 20px;
+  }
+
+  .country__page-body { 
+    gap: 20px;
+  }
+
+  .country__page-index {
+    position: static;
+  }
+}
+@media (max-width: 650px) {
+.country__page-body { 
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
