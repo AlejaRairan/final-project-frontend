@@ -55,7 +55,10 @@ CountriesExplorer is a React web app to discover countries. You can search for a
 
    `VITE_MAIN_API_URL` is the URL of the backend (default: `http://localhost:3000`). Start the backend first. The REST Countries key must allow the origin you run the app from. The `.env` file is never committed.
 
-3. Start the development server:
+3. For production, create a `.env.production` file with the same variables and
+`VITE_MAIN_API_URL=https://api.wtwrr.chickenkiller.com`, then run `npm run build`.
+
+4. Start the development server:
 
    ```bash
    npm run dev
@@ -84,6 +87,8 @@ src/
   hooks/        useFormValidation (form validation)
 ```
 
-## Next steps
+## Deployed site
 
-- Deploy the frontend and the API.
+- Frontend: https://wtwrr.chickenkiller.com
+- API: https://api.wtwrr.chickenkiller.com
+- Backend repository: https://github.com/AlejaRairan/final-project-backend
