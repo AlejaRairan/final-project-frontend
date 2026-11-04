@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./scrollToTop.css";
+import "./ScrollToTop.css";
 
 function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(() => window.scrollY > 300);

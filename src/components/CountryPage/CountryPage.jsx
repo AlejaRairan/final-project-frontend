@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
 import NothingFound from "../NothingFound/NothingFound";
 import { getTravelGuide, getLandscape } from "../../utils/countriesApi";
-import "./countryPage.css";
+import "./CountryPage.css";
 
 function renderText(text) {
   return text
