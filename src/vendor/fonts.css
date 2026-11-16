@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-400-regular.woff2") format("woff2"),
+       url("./fonts/roboto-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-500.woff2") format("woff2"),
+       url("./fonts/roboto-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-700.woff2") format("woff2"),
+       url("./fonts/roboto-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-900.woff2") format("woff2"),
+       url("./fonts/roboto-900.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/roboto-slab-400-regular.woff2") format("woff2"),
+       url("./fonts/roboto-slab-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/roboto-slab-700.woff2") format("woff2"),
+       url("./fonts/roboto-slab-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter-400-regular.woff2") format("woff2"),
+       url("./fonts/inter-400-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter-500.woff2") format("woff2"),
+       url("./fonts/inter-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-main: "Roboto", Arial, sans-serif;           
+  --font-title: "Roboto Slab", Georgia, serif;       
+  --font-alt: "Inter", Arial, sans-serif;            
+
+  font: 16px/1.45 var(--font-main);                 
+  letter-spacing: 0.18px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2 {
+  font-family: var(--font-title);
+  font-weight: 700;                                   
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 1.15;                                
+  letter-spacing: -0.03em;                            
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;                                 
+  letter-spacing: -0.01em;                            
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.2;                                
+  letter-spacing: -0.01em;                            
+}
+
+button,
+input {
+  font-family: inherit;                            
+}
+
+@media (max-width: 1024px) {
+  :root { font-size: 16px; }  
+  p { font-size: 16px; }      
+}
